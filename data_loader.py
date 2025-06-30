@@ -2,7 +2,7 @@ from binance.client import Client
 import pandas as pd
 import datetime
 
-def download_crypto_data(symbol='BTCUSDT', interval='15m', lookback_days=1):
+def download_crypto_data(symbol='BTCUSDT', interval='15m', lookback_days=10):
     client = Client()
 
     end_time = datetime.datetime.now()
@@ -21,8 +21,7 @@ def download_crypto_data(symbol='BTCUSDT', interval='15m', lookback_days=1):
         'Taker Buy Base Asset Volume', 'Taker Buy Quote Asset Volume', 'Ignore'
     ])
 
-    df['Close'] = pd.to_numeric(df['Close'])
-    df['Open Time'] = pd.to_datetime(df['Open Time'], unit='ms')
+    df = df[['Open Time', 'Close']]
     df.set_index('Open Time', inplace=True)
-    df = df[['Close']]
+    df['Close'] = pd.to_numeric(df['Close'])
     return df

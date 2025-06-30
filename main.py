@@ -14,10 +14,18 @@ def main():
 
             # Step 2: Preprocess for LSTM
             X, y, scaler = preprocess_data(data)
-            X = X.reshape((X.shape[0], X.shape[1], 1))
+            if len(X.shape) == 2:
+                X = X.reshape((X.shape[0], X.shape[1], 1))  # only one feature
+            
+            if X.shape[0] == 0:
+                print(f"⚠️ Not enough data after preprocessing {symbol}, skipping.")
+                continue    
+                
+            print(f"X shape: {X.shape}, y shape: {y.shape}")    
+
 
             # Step 3: Build and train model
-            model = build_lstm_model((X.shape[1], 1))
+            model = build_lstm_model((X.shape[1], X.shape[2]))
             model.fit(X, y, epochs=10, batch_size=32, verbose=0)
 
             # Step 4: Predict next-day price
