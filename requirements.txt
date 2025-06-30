@@ -1,0 +1,32 @@
+pandas==2.2.2
+numpy==1.26.4
+matplotlib==3.10.3
+scikit-learn==1.7.0
+tensorflow==2.19.0
+ta==0.11.0
+
+# Then add features like:
+# RSI
+# MACD
+# EMA
+# 4.💬 Add Sentiment Analysis (Advanced)
+# Use Twitter or Reddit APIs
+# Analyze news headlines using NLP
+# Combine price + sentiment features for better results
+# A version that predicts up/down instead of price?
+# A version that handles multiple coins together?
+# A simple web dashboard to run predictions from browser?
+# ➕ Want to:
+# Add multiple coin support (e.g. BTC, ETH, SOL)?
+# Predict real-time short-term intervals (e.g. next 1 hour)?
+# Visualize predicted vs actual price?
+# Store the results in a CSV or database?
+# Plot prediction vs actual?
+# Make it real-time or hourly instead of daily?
+# 🔄 Change interval to 1h/15m for short-term predictions
+# 📁 Store all predictions in a file
+# 📊 Visualize prediction vs actual for each coin
+# 🧾 Save predictions to CSV
+# 🧪 Add price direction (up/down)
+# 📈 Plot actual vs predicted prices
+# 🖥 Turn this into a Flask or Streamlit web app

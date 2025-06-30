@@ -1,0 +1,5 @@
+symbols = [
+    'BTCUSDT', #'ETHUSDT', 'BNBUSDT', 'SOLUSDT',
+    # 'ADAUSDT', 'XRPUSDT', 'DOGEUSDT', 'DOTUSDT',
+    # 'MATICUSDT', 'AVAXUSDT'
+]
